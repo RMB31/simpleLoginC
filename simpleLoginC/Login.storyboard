@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZXL-nF-Uja">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="u1c-00-4rF">
+            <objects>
+                <viewController id="ZXL-nF-Uja" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qqd-Hl-bkI"/>
+                        <viewControllerLayoutGuide type="bottom" id="wOB-mu-fDg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Evb-MZ-0Bm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aU-pQ-TPR">
+                                <rect key="frame" x="30" y="268.5" width="315" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZZC-FR-hej">
+                                <rect key="frame" x="30" y="318.5" width="315" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gpd-mg-Jap"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EG-x6-mI4">
+                                <rect key="frame" x="147.5" y="398.5" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3gw-M1-S5M"/>
+                                    <constraint firstAttribute="height" constant="30" id="8rP-x7-P51"/>
+                                </constraints>
+                                <state key="normal" title="Ingresar"/>
+                                <connections>
+                                    <action selector="ingresarAction" destination="ZXL-nF-Uja" eventType="touchUpInside" id="BwC-sh-xmY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZZC-FR-hej" firstAttribute="leading" secondItem="Evb-MZ-0Bm" secondAttribute="leadingMargin" constant="18" id="Gb8-gW-tOF"/>
+                            <constraint firstItem="6aU-pQ-TPR" firstAttribute="trailing" secondItem="ZZC-FR-hej" secondAttribute="trailing" id="JrI-fM-Szj"/>
+                            <constraint firstItem="ZZC-FR-hej" firstAttribute="centerY" secondItem="Evb-MZ-0Bm" secondAttribute="centerY" id="Kvw-9p-nI4"/>
+                            <constraint firstItem="2EG-x6-mI4" firstAttribute="top" secondItem="ZZC-FR-hej" secondAttribute="bottom" constant="50" id="RHE-nF-hVH"/>
+                            <constraint firstItem="ZZC-FR-hej" firstAttribute="leading" secondItem="Evb-MZ-0Bm" secondAttribute="leading" constant="30" id="SWu-xn-c69"/>
+                            <constraint firstAttribute="trailing" secondItem="ZZC-FR-hej" secondAttribute="trailing" constant="30" id="VkU-IQ-yjd"/>
+                            <constraint firstItem="6aU-pQ-TPR" firstAttribute="leading" secondItem="ZZC-FR-hej" secondAttribute="leading" id="dUT-sI-bgG"/>
+                            <constraint firstItem="ZZC-FR-hej" firstAttribute="top" secondItem="6aU-pQ-TPR" secondAttribute="bottom" constant="20" id="ePT-ld-xfD"/>
+                            <constraint firstItem="ZZC-FR-hej" firstAttribute="centerX" secondItem="Evb-MZ-0Bm" secondAttribute="centerX" id="kmO-Ll-KLV"/>
+                            <constraint firstItem="2EG-x6-mI4" firstAttribute="centerX" secondItem="Evb-MZ-0Bm" secondAttribute="centerX" id="ytw-XB-1ck"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZZC-FR-hej" secondAttribute="trailing" constant="13" id="yvy-hw-Bhn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Gb8-gW-tOF"/>
+                                <exclude reference="yvy-hw-Bhn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="contrasena" destination="ZZC-FR-hej" id="nuz-xl-8Jn"/>
+                        <outlet property="usuario" destination="6aU-pQ-TPR" id="uUd-xt-oAY"/>
+                        <segue destination="qkH-cJ-q0o" kind="presentation" identifier="inicioSegue" id="l54-Xj-ozx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wHt-e3-OEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="277"/>
+        </scene>
+        <!--Inicio-->
+        <scene sceneID="qMb-wQ-O1t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Inicio" id="qkH-cJ-q0o" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YP5-7O-X5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="276"/>
+        </scene>
+    </scenes>
+</document>
